@@ -14,7 +14,7 @@ beta = 1.0   # taxa de ativação
 alfa = 0.5 # taxa de desativação
 
 # Sistema de EDOs
-def lotka_volterra(t, z):
+def Edo(t, z):
     D, R, DR, DR_a = z
     dDdt = k2*DR - k1*D*R
     dRdt = k2*DR - k1*D*R
@@ -34,7 +34,7 @@ t_span = (0, 30)
 t_eval = np.linspace(0, 30, 1000)
 
 # Resolver
-sol = solve_ivp(lotka_volterra, t_span, z0, t_eval=t_eval)
+sol = solve_ivp(Edo, t_span, z0, t_eval=t_eval)
 
 # Plot temporal
 plt.figure()
